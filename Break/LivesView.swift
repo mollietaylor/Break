@@ -12,7 +12,7 @@ import UIKit
     
     let BALL_COLOR = UIColor(red:0.29, green:0.23, blue:0.28, alpha:1)
 
-    @IBInspectable var livesLeft: Int = 3 {
+    @IBInspectable var livesLeft: Int = 2 {
         
         didSet {
             

@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC0078C21A7A78970077F7F8 /* Cubano-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC18089F1A797E6500658D67 /* Cubano-Regular.otf */; };
+		EC0078C41A7A81460077F7F8 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0078C31A7A81460077F7F8 /* GameData.swift */; };
 		EC18089E1A79709800658D67 /* LivesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC18089D1A79709800658D67 /* LivesView.swift */; };
 		EC8C444F1A792E5500785747 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8C444E1A792E5500785747 /* AppDelegate.swift */; };
-		EC8C44511A792E5500785747 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8C44501A792E5500785747 /* ViewController.swift */; };
 		EC8C44541A792E5500785747 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC8C44521A792E5500785747 /* Main.storyboard */; };
 		EC8C44561A792E5500785747 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC8C44551A792E5500785747 /* Images.xcassets */; };
 		EC8C44591A792E5500785747 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8C44571A792E5500785747 /* LaunchScreen.xib */; };
@@ -28,12 +29,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC0078C31A7A81460077F7F8 /* GameData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		EC18089D1A79709800658D67 /* LivesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivesView.swift; sourceTree = "<group>"; };
 		EC18089F1A797E6500658D67 /* Cubano-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cubano-Regular.otf"; sourceTree = "<group>"; };
 		EC8C44491A792E5500785747 /* Break.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Break.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC8C444D1A792E5500785747 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC8C444E1A792E5500785747 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EC8C44501A792E5500785747 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EC8C44531A792E5500785747 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC8C44551A792E5500785747 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EC8C44581A792E5500785747 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -82,8 +83,7 @@
 		EC8C444B1A792E5500785747 /* Break */ = {
 			isa = PBXGroup;
 			children = (
-				EC8C444E1A792E5500785747 /* AppDelegate.swift */,
-				EC8C44501A792E5500785747 /* ViewController.swift */,
+				EC0078C31A7A81460077F7F8 /* GameData.swift */,
 				EC8C446E1A7930D700785747 /* GameVC.swift */,
 				EC18089D1A79709800658D67 /* LivesView.swift */,
 				EC8C44521A792E5500785747 /* Main.storyboard */,
@@ -97,6 +97,7 @@
 		EC8C444C1A792E5500785747 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EC8C444E1A792E5500785747 /* AppDelegate.swift */,
 				EC18089F1A797E6500658D67 /* Cubano-Regular.otf */,
 				EC8C444D1A792E5500785747 /* Info.plist */,
 			);
@@ -200,6 +201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC0078C21A7A78970077F7F8 /* Cubano-Regular.otf in Resources */,
 				EC8C44541A792E5500785747 /* Main.storyboard in Resources */,
 				EC8C44591A792E5500785747 /* LaunchScreen.xib in Resources */,
 				EC8C44561A792E5500785747 /* Images.xcassets in Resources */,
@@ -221,7 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC18089E1A79709800658D67 /* LivesView.swift in Sources */,
-				EC8C44511A792E5500785747 /* ViewController.swift in Sources */,
+				EC0078C41A7A81460077F7F8 /* GameData.swift in Sources */,
 				EC8C446F1A7930D700785747 /* GameVC.swift in Sources */,
 				EC8C444F1A792E5500785747 /* AppDelegate.swift in Sources */,
 			);
