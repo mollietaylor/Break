@@ -20,6 +20,10 @@ class GameVC: UIViewController, UICollisionBehaviorDelegate {
     @IBOutlet weak var gameView: UIView!
     @IBOutlet weak var livesView: LivesView!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var levelScoreLabel: UILabel!
+    @IBOutlet weak var livesLostLabel: UILabel!
+    @IBOutlet weak var bricksBrokenLabel: UILabel!
+    @IBOutlet weak var levelsPassedLabel: UILabel!
     
     var score: Int = 0 {
         
@@ -29,7 +33,6 @@ class GameVC: UIViewController, UICollisionBehaviorDelegate {
             GameData.mainData().currentGame?["totalScore"] = score
             
             scoreLabel.text = "\(score)"
-            scoreLabel.textColor = BALL_COLOR
             
         }
         
@@ -44,6 +47,15 @@ class GameVC: UIViewController, UICollisionBehaviorDelegate {
     var paddleBehavior = UIDynamicItemBehavior()
     
     var paddle = UIView(frame: CGRectMake(0, 0, 100, 10))
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        levelScoreLabel.hidden = true
+        livesLostLabel.hidden = true
+        bricksBrokenLabel.hidden = true
+        levelsPassedLabel.hidden = true
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +84,9 @@ class GameVC: UIViewController, UICollisionBehaviorDelegate {
         
         brickBehavior.density = 1000000
         paddleBehavior.density = 1000000
+        paddleBehavior.allowsRotation = false
+        
+        livesView.livesLeft = 2
         
         playGame()
         
@@ -83,19 +98,49 @@ class GameVC: UIViewController, UICollisionBehaviorDelegate {
         
         breakLabel.hidden = true
         playButton.hidden = true
+        levelScoreLabel.hidden = true
+        livesLostLabel.hidden = true
+        bricksBrokenLabel.hidden = true
+        levelsPassedLabel.hidden = true
         
         createPaddle()
         createBall()
         createBricks()
-        score = 0
-        livesView.livesLeft = 2
         
     }
     
     func endGame(gameOver: Bool) {
-
         
-        GameData.mainData().currentLevel = gameOver ? 0 : ++GameData.mainData().currentLevel
+        if gameOver {
+            GameData.mainData().currentLevel = 0
+            livesView.livesLeft = 2
+            breakLabel.text = "BREAK"
+        } else {
+            GameData.mainData().currentLevel++
+            GameData.mainData().adjustValue(1, forKey: "levelBeaten")
+            breakLabel.text = "NEXT LEVEL"
+        }
+        
+        
+        
+        levelScoreLabel.hidden = false
+        livesLostLabel.hidden = false
+        bricksBrokenLabel.hidden = false
+        levelsPassedLabel.hidden = false
+        
+        levelScoreLabel.text = "Score: \(score)"
+        
+        GameData.mainData().currentGame?["totalScore"] = score
+        
+        if let ll = GameData.mainData().currentGame!["livesLost"] {
+            livesLostLabel.text = "Lives Lost: \(ll)"
+        }
+        if let bb = GameData.mainData().currentGame!["bricksBusted"] {
+            bricksBrokenLabel.text = "Bricks Broken: \(bb)"
+        }
+        if let lp = GameData.mainData().currentGame!["levelBeaten"] {
+            levelsPassedLabel.text = "Levels Passed: \(lp)"
+        }
         
         println(GameData.mainData().gamesPlayed)
         println(GameData.mainData().topScore)
